@@ -83,7 +83,7 @@ const Pathwise = (db: any) => {
     });
   };
 
-  const get = (path: any[], fn: (d1: any, d2?: any) => void) => {
+  const get = (path: any, fn: (d1: any, d2?: any) => void) => {
     let ret = {};
     let el: any = ret;
 
