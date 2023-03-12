@@ -5,7 +5,7 @@ import { Client } from '@hiveio/dhive';
 import { CONFIG } from '@config';
 import api from '@src/routes';
 import { Pathwise } from '@src/utils';
-import { AppStart } from './Application';
+import { AppStart } from './application';
 
 const IPFS = require('ipfs-http-client-lite');
 const level = require('level');

@@ -1,5 +1,5 @@
 import express from 'express';
-import { RootController } from 'src/Controller';
+import { RootController } from '@src/controller';
 
 const Root = express();
 

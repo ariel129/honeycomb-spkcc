@@ -1,9 +1,9 @@
-import Hive from './Hive';
-import { RootController } from '@src/Controller';
+import { RootController } from '@src/controller';
 import { CONFIG, VERSION } from '@config';
 import { store } from '..';
 import { BLOCK, RAM, STARTING_BLOCK } from '@src/utils';
-import { IpfsService } from '@src/Services';
+import { IpfsService } from '@src/services';
+import { Hive } from '.';
 
 const {
   ChainTypes,
@@ -72,7 +72,7 @@ const AppStart = () => {
     if (hash && hash != 'pending') {
       console.log(`Attempting to start from IPFS save state ${hash}`);
       ipfspromise(hash)
-        .then((blockInfo: any) => { 
+        .then((blockInfo: any) => {
           if (blockInfo[0] == 'D') console.log(blockInfo);
           const blockinfo = JSON.parse(blockInfo);
           ipfspromise(blockinfo[1].root ? blockinfo[1].root : hash).then(
@@ -80,7 +80,7 @@ const AppStart = () => {
               const data = JSON.parse(file);
               STARTING_BLOCK.startingBlock = data[0];
               BLOCK.root = blockinfo[1].root ? blockinfo[1].root : hash;
-              BLOCK.prev_root = data[1].prev_rootarting 
+              BLOCK.prev_root = data[1].prev_rootarting
                 ? data[1].prev_root
                 : data[1].stats.root || '';
               console.log('root', BLOCK.root, STARTING_BLOCK);

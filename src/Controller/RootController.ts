@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { CONFIG, VERSION } from '@config';
 import { store } from 'src'; 
 import { RAM } from '@src/utils';
-import { HiveService } from '@src/Services';
+import { HiveService } from '@src/services';
 
 const RootController = () => {
   const { fetchHive } = HiveService();
