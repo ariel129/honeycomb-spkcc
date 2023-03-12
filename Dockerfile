@@ -12,4 +12,4 @@ COPY ./processing_routes ./processing_routes/
 
 COPY ./routes ./routes/
 
-CMD ["node", "docker-start.js"]
+CMD ["node", "docker-start.ts"]
